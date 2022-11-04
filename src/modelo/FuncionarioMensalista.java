@@ -5,6 +5,11 @@ public class FuncionarioMensalista extends Funcionario {
     private Double salario;
     private Double comissao;
 
+    public FuncionarioMensalista(String nome, Double salario, Double comissao) {
+        this.setNome(nome);
+        this.setSalario(salario);
+        this.setComissao(comissao);
+    }
 
     public Double getSalario() {
         return salario;
@@ -25,4 +30,5 @@ public class FuncionarioMensalista extends Funcionario {
     public Double calcularSalario() {
         return this.salario + this.comissao;
     }
+
 }
