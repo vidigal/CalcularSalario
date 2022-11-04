@@ -1,5 +1,9 @@
+import modelo.Funcionario;
 import modelo.FuncionarioHorista;
 import modelo.FuncionarioMensalista;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class Executavel2 {
 
@@ -13,14 +17,21 @@ public class Executavel2 {
         FuncionarioHorista fh2 = new FuncionarioHorista("Pedro", 180.0, 120.0);
         FuncionarioHorista fh3 = new FuncionarioHorista("José", 175.0, 100.0);
 
-        System.out.println("O funcionário " + fm1.getNome() + " irá receber " + fm1.calcularSalario());
-        System.out.println("O funcionário " + fm2.getNome() + " irá receber " + fm2.calcularSalario());
-        System.out.println("O funcionário " + fm3.getNome() + " irá receber " + fm3.calcularSalario());
+        Collection<Funcionario> funcionarios = new ArrayList<Funcionario>();
+        funcionarios.add(fm1);
+        funcionarios.add(fm2);
+        funcionarios.add(fm3);
+        funcionarios.add(fh1);
+        funcionarios.add(fh2);
+        funcionarios.add(fh3);
 
-        System.out.println("O funcionário " + fh1.getNome() + " irá receber " + fh1.calcularSalario());
-        System.out.println("O funcionário " + fh2.getNome() + " irá receber " + fh2.calcularSalario());
-        System.out.println("O funcionário " + fh3.getNome() + " irá receber " + fh3.calcularSalario());
+        for (Funcionario f: funcionarios) {
+            imprimirInformacoes(f);
+        }
+    }
 
+    public static void imprimirInformacoes(Funcionario funcionario) {
+        System.out.println(funcionario.getNome() + " recebe: " + funcionario.calcularSalario());
     }
 
 }
